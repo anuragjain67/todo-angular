@@ -14,7 +14,7 @@ describe('notesFactory tests', function (){
       factory = notesFactory;
     });
 	
-	  var store = {todo1:'test1',todo2:'test2',todo3:'test3'};
+	  var store = {todo1:'test1', todo2:'test2', todo3:'test3'};
 
 	  spyOn(localStorage, 'getItem').andCallFake(function (key) {
 		  return store[key];

@@ -1,7 +1,21 @@
 describe('filter tests', function() {
-	beforeEach(module('todoApp'));
-	it('should truncate the input to 10 characters',
-		inject(function(truncateFilter) {
-	    expect(truncateFilter('abcdefghijk',10).length).toBe(10);
-	}));
+var truncateFilter;
+
+//excuted before each "it" is run.
+beforeEach(function(){
+	
+	//load the module.
+	module('todoApp');
+
+  //inject dependency
+	inject(function($injector) {
+    truncateFilter = $injector.get('truncateFilter');
+  });
+	
+});
+
+it('should truncate the input to 10 characters', function() {
+	expect(truncateFilter('abcdefghijk',10).length).toBe(10);
+});
+
 });
