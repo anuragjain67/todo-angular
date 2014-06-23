@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="todoApp">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/app.css" type="text/css"/>
+<title>Todo App</title>
+</head>
+<body>
+ <div class="container center-grey" ng-controller="TodoController">
+  <div class="row top-buffer" >
+    <span class="col-md-3"></span>
+    <span class="col-md-5">
+      <input class="form-control" type="text" ng-model="note" placeholder="Add a note here"/> 
+    </span>
+    <span class="col-md-1">
+      <button ng-click="createNote()" class="btn btn-success">
+        ADD
+      </button>
+    </span>
+    <span class="col-md-3"></span>
+  </div>
+  <div class="row top-buffer" >
+    <span class="col-md-3"></span>
+    <span class="col-md-6">
+      <ul class="list-group">
+        <li ng-repeat="note in notes track by $index" class="list-group-item">
+          <span>{{note|truncate:20}}</span>
+        </li>
+      </ul>
+    </span>
+    <span class="col-md-3"></span>
+  </div>
+</div>
+</body>
+<script src="/bower_components/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="/bower_components/angular/angular.min.js" type="text/javascript"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</html>
